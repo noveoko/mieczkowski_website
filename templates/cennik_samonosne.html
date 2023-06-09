@@ -1,0 +1,144 @@
+{% extends "base.html" %}
+
+{% block content %}
+<form action="mailto:biuro@mieczkowski.com.pl?subject=Wycena samonosne m" method="post">
+    <div class="form-group">
+        <label for="email">Wpisz swój e-mail</label>
+        <input type="email" class="form-control" id="email" name="email" required>
+    </div>
+    <hr>
+    <div class="form-group">
+        <label for="wood_species">Jaki gatunek drewna państwa interesuje</label>
+        <select class="form-control" id="wood_species" name="wood_species" required>
+            <option value="Amazakque">Amazakque</option>
+            <option value="Bodo">Bodo</option>
+            <option value="Dąb">Dąb</option>
+            <option value="Dąb czerwony">Dąb czerwony</option>
+            <option value="Doussie">Doussie</option>
+            <option value="Iroko">Iroko</option>
+            <option value="Jesion">Jesion</option>
+            <option value="Merbau">Merbau</option>
+            <option value="Orzech Amerykański">Orzech Amerykański</option>
+            <option value="Sapeli">Sapeli</option>
+            <option value="Thermojesion">Thermojesion</option>
+            <option value="Tauari (dąb brazilijski)">Tauari (dąb brazilijski)</option>
+            <option value="Teak">Teak</option>
+            <option value="Wenge">Wenge</option>
+            <option value="lub inne napisz jakie">lub inne napisz jakie</option>
+        </select>
+    </div>
+    <hr>
+    <div class="form-group">
+        <label>Proszę wybrać jeden z poniższych układów schodów</label><br>
+        <div class="form-check">
+            <input type="radio" class="form-check-input" id="proste" name="rodzaj_schodow" value="proste" required>
+            <label class="form-check-label" for="proste">proste</label><br>
+        </div>
+        <div class="form-check">
+            <input type="radio" class="form-check-input" id="podestem_L" name="rodzaj_schodow" value="z_podestem_w_ksztalcie_litery_L" required>
+            <label class="form-check-label" for="podestem_L">z podestem w kształcie litery L</label><br>
+        </div>
+        <div class="form-check">
+            <input type="radio" class="form-check-input" id="podestem_U" name="rodzaj_schodow" value="z_podestem_w_ksztalcie_litery_U" required>
+            <label class="form-check-label" for="podestem_U">z podestem w kształcie litery U</label><br>
+        </div>
+        <div class="form-check">
+            <input type="radio" class="form-check-input" id="jednozabiegowe_L" name="rodzaj_schodow" value="jednozabiegowe_w_ksztalcie_litery_L" required>
+            <label class="form-check-label" for="jednozabiegowe_L">jednozabiegowe w kształcie litery L</label><br>
+        </div>
+        <div class="form-check">
+            <input type="radio" class="form-check-input" id="dwuzabiegowe_U" name="rodzaj_schodow" value="dwuzabiegowe_w_ksztalcie_litery_U" required>
+            <label class="form-check-label" for="dwuzabiegowe_U">dwuzabiegowe w kształcie litery U</label>
+        </div>
+    </div>
+    <hr>
+    <div class="form-group">
+        <label>Czy będą to schody z podstopniami</label><br>
+        <div class="form-check">
+            <input type="radio" class="form-check-input" id="z_podstopniami" name="czy_bedą_to_schody_z" value="z_podstopniami" required>
+            <label class="form-check-label" for="z_podstopniami">z podstopniami</label><br>
+        </div>
+        <div class="form-check">
+            <input type="radio" class="form-check-input" id="bez_podstopni" name="czy_bedą_to_schody_z" value="bez_podstopni" required>
+            <label class="form-check-label" for="bez_podstopni">bez podstopni</label>
+        </div>
+    </div>
+    <hr>
+    <div class="form-group">
+        <label>Rodzaj balustrady</label><br>
+        <div class="form-check">
+            <input type="radio" class="form-check-input" id="bez_balustrady" name="rodzaj_balustrady" value="bez" required>
+            <label class="form-check-label" for="bez_balustrady">bez</label>&nbsp;&nbsp;
+        </div>
+        <div class="form-check">
+            <input type="radio" class="form-check-input" id="drewniana_balustrada" name="rodzaj_balustrady" value="drewniana" required>
+            <label class="form-check-label" for="drewniana_balustrada">drewniana</label>&nbsp;&nbsp;
+        </div>
+        <div class="form-check">
+            <input type="radio" class="form-check-input" id="drewno_stal_nierdzewna" name="rodzaj_balustrady" value="drewno_stal_nierdzewna" required>
+            <label class="form-check-label" for="drewno_stal_nierdzewna">drewno stal nierdzewna</label>&nbsp;&nbsp;
+        </div>
+        <div class="form-check">
+            <input type="radio" class="form-check-input" id="drewno_szklo" name="rodzaj_balustrady" value="drewno_szklo" required>
+            <label class="form-check-label" for="drewno_szklo">drewno szkło</label>&nbsp;&nbsp;&nbsp;
+        </div>
+        <div class="form-check">
+            <input type="radio" class="form-check-input" id="cala_szklana" name="rodzaj_balustrady" value="cala_szklana" required>
+            <label class="form-check-label" for="cala_szklana">cała szklana</label>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="form-check">
+            <input type="radio" class="form-check-input" id="wypelnienie_kute" name="rodzaj_balustrady" value="wypelnienie_kute" required>
+            <label class="form-check-label" for="wypelnienie_kute">wypełnienie kute</label>&nbsp;&nbsp;
+        </div>
+        <div class="form-check">
+            <input type="radio" class="form-check-input" id="cala_balustrada_kuta" name="rodzaj_balustrady" value="cala_balustrada_kuta" required>
+            <label class="form-check-label" for="cala_balustrada_kuta">cała balustrada kuta</label>
+        </div>
+    </div>
+    <hr>
+    <div class="form-group">
+        <label for="dodatkowe_informacje_balustrada">Dodatkowe informacje o balustradzie</label><br>
+        <textarea class="form-control" id="dodatkowe_informacje_balustrada" name="dodatkowe_informacje_balustrada" rows="2" cols="50"></textarea>
+    </div>
+    <hr>
+    <div class="form-group">
+        <label for="szerokosc_stopni">Szerokość schodów (stopni) w cm</label><br>
+        <input type="number" class="form-control" id="szerokosc_stopni" name="szerokosc_stopni" min="0" step="1" required>
+    </div>
+    <div class="form-group">
+        <img src="images/template/sz3.gif" alt="schody proste" width="109" height="100">
+    </div>
+    <hr>
+    <div class="form-group">
+        <label for="wysokosc_kondygnacji">Wysokość kondygnacji w cm</label><br>
+        <input type="number" class="form-control" id="wysokosc_kondygnacji" name="wysokosc_kondygnacji" min="0" step="1" required>
+    </div>
+    <div class="form-group">
+        <label>b) Wielkość otworu w suficie w cm</label><br>
+        szerokość = <input type="number" class="form-control" name="szerokosc" min="0" step="1"><br>
+        długość = <input type="number" class="form-control" name="dlugosc" min="0" step="1"><br>
+    </div>
+    <hr>
+    <div class="form-group">
+        <label>Czy będą barwione na inny kolor</label><br>
+        <div class="form-check">
+            <input type="radio" class="form-check-input" id="tak_barwione" name="czy_beda_barwione_na_inny_kolor" value="tak" required>
+            <label class="form-check-label" for="tak_barwione">tak</label>&nbsp;&nbsp;
+        </div>
+        <div class="form-check">
+            <input type="radio" class="form-check-input" id="nie_barwione" name="czy_beda_barwione_na_inny_kolor" value="nie" required>
+            <label class="form-check-label" for="nie_barwione">nie</label>
+        </div>
+    </div>
+    <hr>
+    <div class="form-group">
+        <label for="dodatkowe_informacje">Dodatkowe informacje</label><br>
+        <textarea class="form-control" id="dodatkowe_informacje" name="dodatkowe_informacje" rows="2" cols="50"></textarea>
+    </div>
+    <div class="form-group">
+        <input type="submit" class="btn btn-primary" value="Wyślij">
+    </div>
+</form>
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block title %}Cennik{% endblock %}
+
+
+
+{% block content %}
+
+<div class="container my-3">
+    <div class="row">
+        <div class="col-md-4 text-center mb-4">
+            <div class="card border-warning">
+                <a href="{{ url_for('cennik_samonosne') }}">
+                    <img class="card-img-top img-fluid curved-corners" width=250 src="{{ url_for('static', filename='images/template/schody_137.jpg') }}" alt="Schody Samonośne">
+                </a>
+                <div class="card-body">
+                    <a class="text-decoration-none" href="{{ url_for('cennik_samonosne') }}">
+                        <h4 class="card-title text-dark">Formularz schody samonośne</h4>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 text-center">
+            <div class="card border-warning">
+                <a href="{{ url_for('cennik_beton') }}">
+                    <img class="card-img-top img-fluid curved-corners" src="{{ url_for('static', filename='images/template/schody_126.jpg') }}" width=250 alt="Schody Betonowe">
+                </a>
+                <div class="card-body">
+                    <a class="text-decoration-none" href="{{ url_for('cennik_beton') }}">
+                        <h4 class="card-title text-dark">Formularz schody betonowe obkładane drewnem</h4>
+                 
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+

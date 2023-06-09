@@ -1,0 +1,17 @@
+<nav class="nav">
+    <h1 class="logo">Mieczkowski</h1>
+    <ul>
+      <li class="{{ 'active' if title=='home' else '' }}"><a href="{{ url_for('home') }}">Home</a></li>
+      <li class="{{ 'active' if title=='galeria' else '' }}"><a href="{{ url_for('galeria') }}">Galeria</a></li>
+      <li class="{{ 'active' if title=='oferta' else '' }}"><a href="{{ url_for('oferta') }}">Oferta</a></li>
+      <li class="{{ 'active' if title=='cennik' else '' }}"><a href="{{ url_for('cennik') }}">Cennik</a></li>
+      <li class="{{ 'active' if title=='kontakt' else '' }}"><a href="{{ url_for('kontakt') }}">Kontakt</a></li>
+
+      <!-- Conditional rendering of Login/Logout based on user authentication status -->
+      {% if current_user.is_authenticated %}
+        <li class="{{ 'active' if title=='logout' else '' }}"><a href="{{ url_for('logout') }}">Logout</a></li>
+      {% else %}
+        <li class="{{ 'active' if title=='login' else '' }}"><a href="{{ url_for('login') }}">Login</a></li>
+      {% endif %}
+    </ul>
+</nav>
