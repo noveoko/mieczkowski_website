@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}Cennik Betonowy{% endblock %}
+
+
+
+{% block content %}
+
+  <h1>FORMULARZ SCHODY BETONOWE OBKŁADANE DREWNEM</h1>
+  <form method="POST">
+    {{ form.hidden_tag() }}
+    {{ form.email.label }} {{ form.email() }}
+    {{ form.wood_species.label }} {{ form.wood_species() }}
+    {{ form.step_count.label }} {{ form.step_count() }}
+    {{ form.staircase_type.label }} {{ form.staircase_type() }}
+    {{ form.staircase_width.label }} {{ form.staircase_width() }}
+    {{ form.riser_type.label }} {{ form.riser_type() }}
+    # add other fields here...
+    {{ form.additional_info.label }} {{ form.additional_info() }}
+    {{ form.submit() }}
+  </form>
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1 class="text-center">Galeria</h1>
+    <nav>
+        <ul>
+          <li>Schody
+            <ul>
+              <li><a href="{{ url_for('schody_na_beton') }}">na beton</a></li>
+              <li><a href="{{ url_for('schody_samonosne') }}">samonośne</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      
+      <nav>
+        <ul>
+          <li>Pozostale
+            <ul>
+              <li><a href="{{ url_for('antresole') }}">Antresole</a></li>
+              <li><a href="{{ url_for('balustrady') }}">Balustrady</a></li>
+              <li><a href="{{ url_for('szafy') }}">Szafy</a></li>
+              <li><a href="{{ url_for('inne') }}">Inne</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      
+
+    <div class="row">
+        {% for image in images %}
+        <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card h-100">
+                <a href="#"><img class="card-img-top" src="{{ url_for('static', filename='images/' + image) }}" alt="{{ image }}"></a>
+                <div class="card-body">
+                    <h4 class="card-title">
+                        <a href="#">{{ image }}</a>
+                    </h4>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
