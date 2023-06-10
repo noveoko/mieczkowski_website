@@ -170,6 +170,20 @@ def cennik_beton():
         return redirect(url_for('home'))
     return render_template('cennik_beton.html', title='Staircase Form', form=form)
 
+from products import products as images_data
+
+@app.route('/<category>')
+def category(category):
+    # Select the first image from each product in the category
+    products = [product for product in images_data[category]]
+    category_links = []
+    for product in products:
+        product_desc = product['description']
+        image_links = product['images']
+        image_link = f'<img src="{image_links[0]}">'
+        category_links.append(image_link)
+        
+    return render_template('gallery_view.html', images=category_links, count=len(category_links))
 
 if __name__ == "__main__":
     with app.app_context():

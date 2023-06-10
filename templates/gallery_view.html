@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+Total Items: {{ count }}
+{% for image in images %}
+<div class="col-lg-4 col-md-6 mb-4">
+    
+    {{ image }}
+
+</div>
+{% endfor %}
+{% endblock %}
