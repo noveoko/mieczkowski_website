@@ -15,12 +15,12 @@ import click
 from flask import Flask
 from werkzeug.security import generate_password_hash
 from flask_sqlalchemy import SQLAlchemy
-
+from config import Config
 
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'dfasdfdsadfsfaff'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///app_data.db'
+app.config.from_object(Config)
+
 
 db = SQLAlchemy(app)
 login_manager = LoginManager()
@@ -102,7 +102,8 @@ def protected():
 
 @app.route('/')
 def home():
-    return render_template('index.html')
+    site_title = app.config['SITE_TITLE']
+    return render_template('index.html', site_title=site_title)
 
 @app.route('/galeria')
 def galeria():
@@ -147,7 +148,7 @@ def inne():
     return render_template('inne.html')
 
 @app.route('/cennik_samonosne', methods=['GET', 'POST'])
-def stairs_form():
+def cennik_samonosne():
     form = SamonosneStairsForm()
     if form.validate_on_submit():
         # Process the form data or send an email
