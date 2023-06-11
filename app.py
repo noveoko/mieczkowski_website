@@ -16,7 +16,7 @@ from flask import Flask
 from werkzeug.security import generate_password_hash
 from flask_sqlalchemy import SQLAlchemy
 from config import Config
-
+from utils.products import products as images_data
 
 app = Flask(__name__)
 app.config.from_object(Config)
@@ -108,8 +108,26 @@ def home():
 @app.route('/galeria')
 def galeria():
     # Define images here or pass it as a parameter to the function
-    images = os.listdir(os.path.join(app.static_folder, "images/portfolio/"))
-    return render_template('galeria.html', images=images, title='Galeria')
+    images = os.listdir(os.path.join(app.static_folder, "images/products/"))
+    
+    # Reconstruct the dictionary in a more convenient way
+    PORTFOLIO_CATEGORIES = {
+        "schody": {
+            "na_beton": True,
+            "samonosne": True
+        },
+        "pozostale": {
+            "antresole": True,
+            "balustrady": True,
+            "szafy": False,
+            "inne": False
+        }
+    }
+    
+    categories_to_publish = {k: [sub_k for sub_k, sub_v in v.items() if sub_v] for k, v in PORTFOLIO_CATEGORIES.items()}
+
+    return render_template('galeria.html', images=images, title='Galeria', categories=categories_to_publish)
+
 
 @app.route('/oferta')
 def oferta():
@@ -170,9 +188,7 @@ def cennik_beton():
         return redirect(url_for('home'))
     return render_template('cennik_beton.html', title='Staircase Form', form=form)
 
-from products import products as images_data
-
-@app.route('/<category>')
+@app.route('/portfolio/<category>')
 def category(category):
     # Select the first image from each product in the category
     products = [product for product in images_data[category]]
@@ -182,8 +198,9 @@ def category(category):
         image_links = product['images']
         image_link = f'<img src="{image_links[0]}">'
         category_links.append(image_link)
-        
+
     return render_template('gallery_view.html', images=category_links, count=len(category_links))
+
 
 if __name__ == "__main__":
     with app.app_context():
