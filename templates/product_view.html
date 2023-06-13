@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block title %}{{ description }}{% endblock %}
+
+{% block content %}
+    <h2>{{ description }}</h2>
+    {% for image in images %}
+        <img src="{{ url_for('static', filename=image) }}" alt="product image" style="width: 25%;">
+    {% endfor %}
+{% endblock %}

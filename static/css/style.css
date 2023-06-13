@@ -64,7 +64,13 @@ nav {
     padding: 10px;
     background-color: #fff; /* change to pure white for a clean look */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Ensures the nav stays on top of other content when scrolling */
 }
+
+
+
 
 nav img {
     width: 260px;
@@ -151,6 +157,22 @@ footer {
     padding: 20px;    /* This adds some space around your form */
 }
 
+.form-control {
+    border: 1px solid #ced4da;
+    box-shadow: none;
+}
+
+.form-control:focus {
+    border: 1px solid #4285f4;
+    box-shadow: 0 0 0 0.2rem rgba(66, 133, 244, 0.25);
+}
+
+.btn-primary {
+    background-color: #4285f4;
+    border-color: #4285f4;
+}
+
+
 .main-content {
     margin: 20px;
 }
@@ -233,3 +255,8 @@ font[color="8B4F00"] {
     color: black;
   }
   
+  .square-thumbnail {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}

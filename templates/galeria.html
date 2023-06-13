@@ -4,33 +4,31 @@
 <div class="container mt-5">
     <h1 class="text-center">Galeria</h1>
     
-    {% for category, subcategories in categories.items() %}
-    <nav>
-        <ul>
-            <li>{{ category.capitalize() }}
-                <ul>
+    <div>
+        {% for category, subcategories in categories.items() %}
+        <div class="card" style="width: 18rem;">
+            {% if category_images[category] %}
+            <!-- <a href="{{ url_for('category', category=category) }}">
+                <img src="{{ url_for('static', filename=category_images[category]) }}" class="card-img-top square-thumbnail" alt="{{ category }}">
+            </a> -->
+            {% endif %}
+            <div class="card-body">
+                <h5 class="card-title">
+                   {{ category.capitalize() }}
+                </h5>
+                <div class="row">
                     {% for subcategory in subcategories %}
-                    <li><a href="{{ url_for('category', category=subcategory) }}">{{ subcategory }}</a></li>
+                    <div class="col-md-6">
+                        <a href="{{ url_for('category', category=subcategory) }}">
+                            <img src="{{ url_for('static', filename=subcategory_images[subcategory]) }}" class="img-thumbnail square-thumbnail" alt="{{ subcategory }}">
+                            {{ subcategory }}
+                        </a>
+                    </div>
                     {% endfor %}
-                </ul>
-            </li>
-        </ul>
-    </nav>
-    {% endfor %}
-    
-    <!-- <div class="row">
-        {% for image in images %}
-        <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card h-100">
-                <a href="#"><img class="card-img-top" src="{{ url_for('static', filename='images/' + image) }}" alt="{{ image }}"></a>
-                <div class="card-body">
-                    <h4 class="card-title">
-                        <a href="#">{{ image }}</a>
-                    </h4>
                 </div>
             </div>
         </div>
         {% endfor %}
-    </div> -->
+    </div>
 </div>
 {% endblock %}
