@@ -4,3 +4,4 @@ flask-wtf
 email-validator
 flask-login
 flask-sqlalchemy
+bandit

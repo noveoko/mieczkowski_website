@@ -10,7 +10,7 @@ class Config(object):
 
     #Set True (active) or False (inactive) for every category in your portfolio
     PORTFOLIO_CATEGORIES = [{"schody":{
-        "na_beton": True,
+        "schody_na_beton": True,
         "samonosne": True}},
     {"pozostale":{
         "antresole": True,
