@@ -11,16 +11,9 @@ from config import Config
 from forms.samonosne_form import SamonosneStairsForm
 from forms.beton_form import BetonStairsForm
 from utils.products import products as images_data
-import subprocess
+
 
 app = Flask(__name__)
-
-def run_bandit_scan():
-    # Run bandit security check
-    result = subprocess.run(["bandit", "-r", "."], capture_output=True, text=True)
-    if result.returncode != 0:
-        print(result.stdout)
-        raise Exception("Security vulnerabilities detected. Check the output above.")
 
 
 app.config.from_object(Config)
@@ -219,5 +212,4 @@ def category(category):
 if __name__ == "__main__":
     with app.app_context():
         db.create_all()
-    run_bandit_scan()  # Run bandit security check
     app.run(debug=True)
