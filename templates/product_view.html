@@ -3,34 +3,50 @@
 {% block title %}{{ description }}{% endblock %}
 
 {% block content %}
+    <div class="row">
+        <div class="col-md-2">
+            {% for image in images %}
+                <img src="{{ url_for('static', filename=image) }}" class="img-thumbnail my-2 product-img {% if loop.first %}active{% endif %}" alt="product image" data-index="{{ loop.index0 }}">
+            {% endfor %}
+        </div>
+        
+        <div class="col-md-8">
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    {% for image in images %}
+                        <div class="carousel-item {% if loop.first %}active{% endif %}">
+                            <img src="{{ url_for('static', filename=image) }}" class="d-block w-100" alt="product image">
+                        </div>
+                    {% endfor %}
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
 
-    <div class="col-md-3">
-        <h2 class="album-name">SN 06</h2>
-        <div class="desc">
-            <p>- {{ description }}</p>
+        <div class="col-md-2">
+            <h2 class="album-name">SN 06</h2>
+            <div class="desc">
+                <p>- {{ description }}</p>
+            </div>
         </div>
     </div>
     
-    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-        <ol class="carousel-indicators">
-            {% for image in images %}
-                <li data-target="#carouselExampleIndicators" data-slide-to="{{ loop.index0 }}" {% if loop.first %}class="active"{% endif %}></li>
-            {% endfor %}
-        </ol>
-        <div class="carousel-inner">
-            {% for image in images %}
-                <div class="carousel-item {% if loop.first %}active{% endif %}">
-                    <img src="{{ url_for('static', filename=image) }}" class="d-block w-100" alt="product image">
-                </div>
-            {% endfor %}
-        </div>
-        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-        </a>
-    </div>
+    <script>
+    $(function() {
+        $(".product-img").click(function() {
+            var index = $(this).data("index");
+            $("#carouselExampleIndicators").carousel(index);
+            
+            $(".product-img").removeClass("active").css("opacity", "0.5");
+            $(this).addClass("active").css("opacity", "1");
+        });
+    });
+    </script>
 {% endblock %}

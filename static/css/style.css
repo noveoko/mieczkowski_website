@@ -260,3 +260,10 @@ font[color="8B4F00"] {
     height: 200px;
     object-fit: cover;
 }
+.product-img {
+    opacity: 0.5;
+}
+
+.product-img.active {
+    opacity: 1;
+}
