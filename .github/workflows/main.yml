@@ -20,6 +20,6 @@ jobs:
         username: ${{ secrets.DROPLET_USERNAME }}
         key: ${{ secrets.DROPLET_SSH_KEY }}
         script: |
-          cd cd ~/mieczkowski_website
+          cd ~/mieczkowski_website
           git pull origin main
           sudo systemctl restart miecz
