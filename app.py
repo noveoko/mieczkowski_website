@@ -236,8 +236,8 @@ def cennik_samonosne():
 
 
 
-@app.route('/cennik_betonowe', methods=['GET', 'POST'])
-def cennik_betonowe():
+@app.route('/cennik_beton', methods=['GET', 'POST'])
+def cennik_beton():
     template_images = {
         'proste': 'schodyc2.png',
         'z podestem w ksztalcie litery L': 'schodyc1.png',
@@ -265,7 +265,7 @@ def cennik_betonowe():
 
         return redirect(url_for('success'))  # Assuming 'success' is another route in your Flask application
 
-    return render_template('cennik_betonowe.html', form=form, image_paths=template_images)
+    return render_template('cennik_beton.html', form=form, image_paths=template_images)
 
 
 
