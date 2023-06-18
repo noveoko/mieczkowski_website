@@ -283,3 +283,34 @@ font[color="8B4F00"] {
     max-height: 100vh; /* set max height to viewport height */
     overflow-y: auto;  /* allow vertical scroll if content overflows */
 }
+.card-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.feature_image {
+    height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+.card {
+    width: 100%;
+    max-width: 18rem;
+    margin: auto;
+}
+
+.portfolio-link {
+    color: black; /* Adjust color here */
+    text-decoration: none; /* Removes underline */
+    transition: color 0.3s ease;
+}
+
+.portfolio-link:hover {
+    color: #777; /* Dark gray hover color */
+}
+
+.square-thumbnail {
+    max-width: 100%;
+}

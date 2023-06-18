@@ -2,7 +2,7 @@
 
 {% block content %}
 <div class="container">
-  <h2>Evaluation Form</h2>
+  <h2>Formularz Schody Samnośne</h2>
   <form method="POST">
     {{ form.hidden_tag() }}
     
@@ -17,12 +17,16 @@
     </div>
 
     <div class="form-group">
-      {{ form.stairs_type.label }}<br>
-      {% for subfield in form.stairs_type %}
-      {{ subfield }} {{ subfield.label }}
-      {% endfor %}
-    </div>
-
+        {{ form.stairs_type.label }}<br>
+        {% for subfield in form.stairs_type %}
+          <img src="{{ url_for('static', filename='images/template/' ~ image_paths[subfield.label.text]) }}">
+          <label>
+            {{ subfield }} {{ subfield.label }}
+          </label><br>
+        {% endfor %}
+      </div>
+      
+      
     <div class="form-group">
       {{ form.stairs_with.label }}<br>
       {% for subfield in form.stairs_with %}
@@ -38,13 +42,15 @@
     </div>
 
     <div class="form-group">
-      {{ form.stairs_width_cm.label }}<br>
-      {{ form.stairs_width_cm(class="form-control") }}
-    </div>
-
+        {{ form.stairs_width_cm.label }}<br>
+        {{ form.stairs_width_cm(class="form-control") }}
+        <img src="{{ url_for('static', filename='images/template/' ~ image_paths['stairs_width_cm']) }}">
+      </div>
+      
     <div class="form-group">
       {{ form.floor_height_cm.label }}<br>
       {{ form.floor_height_cm(class="form-control") }}
+      <img src="{{ url_for('static', filename='images/template/' ~ image_paths['floor_height_cm']) }}">
     </div>
 
     <div class="form-group">

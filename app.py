@@ -8,12 +8,12 @@ from werkzeug.security import check_password_hash, generate_password_hash
 from wtforms import StringField, SelectField, RadioField, TextAreaField, SubmitField
 from wtforms.validators import DataRequired, Email
 from config import Config
-from forms.beton_form import BetonStairsForm
 from utils.products import products as image_links
 from collections import defaultdict
 from flask import render_template, redirect, url_for
 from forms.samonosne_form import SamonosneStairsForm
-
+from forms.beton_form import SchodyBetonowe
+import random
 
 app = Flask(__name__)
 
@@ -202,33 +202,71 @@ def inne():
     return render_template('inne.html')
 
 
-
 @app.route('/cennik_samonosne', methods=['GET', 'POST'])
 def cennik_samonosne():
+
+    template_images = {
+        'proste': 'schodyc2.png',
+        'z podestem w ksztalcie litery L': 'schodyc1.png',
+        'z podestem w ksztalcie litery U': 'schodyc3.png',
+        'jednozabiegowe w ksztalcie litery L': 'schodyc4.png',
+        'dwuzabiegowe w ksztalcie litery U': 'schodyc5.png',
+        'stairs_width_cm':'sz3.png',
+        'floor_height_cm':'w_cropped.png'
+    }
+
     form = SamonosneStairsForm()
     if form.validate_on_submit():
-        email = form.email.data
-        wood_type = form.wood_type.data
-        stairs_type = form.stairs_type.data
-        stairs_with = form.stairs_with.data
-        balustrade_type = form.balustrade_type.data
-        additional_information = form.additional_information.data
+        # Destructure form data
+        email, wood_type, stairs_type, stairs_with, balustrade_type, additional_information = (
+            form.email.data,
+            form.wood_type.data,
+            form.stairs_type.data,
+            form.stairs_with.data,
+            form.balustrade_type.data,
+            form.additional_information.data
+        )
+
         
-        # process your form data here as needed
 
-        return redirect(url_for('success'))  # assuming success is another route in your Flask application
-    return render_template('cennik_samonosne.html', form=form)
+        return redirect(url_for('success'))  # Assuming 'success' is another route in your Flask application
+
+    return render_template('cennik_samonosne.html', form=form, image_paths=template_images)
 
 
 
-@app.route('/cennik_beton', methods=['GET', 'POST'])
-def cennik_beton():
-    form = BetonStairsForm()
+
+@app.route('/cennik_betonowe', methods=['GET', 'POST'])
+def cennik_betonowe():
+    template_images = {
+        'proste': 'schodyc2.png',
+        'z podestem w ksztalcie litery L': 'schodyc1.png',
+        'z podestem w ksztalcie litery U': 'schodyc3.png',
+        'jednozabiegowe w ksztalcie litery L': 'schodyc4.png',
+        'dwuzabiegowe w ksztalcie litery U': 'schodyc5.png',
+        'stairs_width_cm': 'sz3.png',
+        'floor_height_cm': 'w_cropped.png'
+    }
+
+    form = SchodyBetonowe()
     if form.validate_on_submit():
-        flash('Form submitted with email {}'.format(
-            form.email.data))
-        return redirect(url_for('home'))
-    return render_template('cennik_beton.html', title='Staircase Form', form=form)
+        # Destructure form data
+        email, wood_type, stairs_type, stairs_width, balustrade_type, additional_information = (
+            form.email.data,
+            form.wood_type.data,
+            form.stairs_type.data,
+            form.stairs_width.data,
+            form.balustrade_type.data,
+            form.additional_information.data
+        )
+
+        # Process the form data as needed
+        # ...
+
+        return redirect(url_for('success'))  # Assuming 'success' is another route in your Flask application
+
+    return render_template('cennik_betonowe.html', form=form, image_paths=template_images)
+
 
 
 @app.route('/portfolio/<category>')

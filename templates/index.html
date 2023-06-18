@@ -5,28 +5,33 @@
   <section class="content">
     <div class="container">
         <div class="row">
-          <div class="col-md-12">
+          <!-- Image Column -->
+          <div class="col-md-4">
+            <img src="{{ url_for('static', filename='images/template/' ~ 'feature_project2.jpeg') }}" class="feature_image" alt="Staircase">
+          </div>
+          <!-- Text Column -->
+          <div class="col-md-8">
             <p class="no-break">
-                <span class="logo_in_text">{{site_title}}</span> to od wielu lat, istniejący na rynku producent schodów drewnianych, balustrad, antresol oraz innych produktów z drewna. Jako producent schodów cenimy zadowolenie Klientów jednocześnie stawiając sobie priorytet swego działania.
-            </p>
-            <p class="no-wrap-short-words">
-              Schody drewniane, samonośne bądź obłożenie drewnem istniejących schodów betonowych oraz inne produkty, które oferujemy są precyzyjnie wykonane a w połączeniu z wieloletnim doświadczeniem i najlepszym materiałem jaki wykorzystujemy, sprawiają, że nasi Klienci są zadowoleni z efektów końcowych zamówień.
-            </p>
-            <p class="no-wrap-short-words">
-              Zapewniamy pełną obsługę, zaczynając od projektowania, aranżacji, doradztwa kończąc na montażu.
-            </p>
-            <p class="no-wrap-short-words">
-              Zapraszamy do odwiedzenia galerii, gdzie można zobaczyć niektóre nasze realizacje.
-            </p>
-            <p class="no-wrap-short-words">
-              Zapraszamy również do naszego warsztatu gdzie możecie Państwo obejrzeć naszą wystawę schodów i balustrad.
-            </p>
+              <span class="logo_in_text">{{site_title}}</span> od wielu lat cieszy się uznaniem jako producent najwyższej jakości schodów drewnianych, balustrad, antresol i innych unikalnych produktów z drewna. Jako pasjonaci rzemiosła, stawiamy zadowolenie naszych klientów na pierwszym miejscu - to jest sedno naszej misji.
+          </p>
+          <p>
+              Nasze schody drewniane, samonośne czy obłożenia istniejących schodów betonowych są wykonane z precyzją, którą gwarantuje wieloletnie doświadczenie i najlepsze materiały. Dzięki temu nasi Klienci zawsze są zadowoleni z efektów końcowych naszych zamówień.
+          </p>
+          <p>
+              Zapewniamy pełną obsługę - od projektowania i aranżacji, przez doradztwo, aż po montaż.
+          </p>
+          <p>
+              Serdecznie zapraszamy do odwiedzenia naszej galerii, gdzie można zobaczyć niektóre z naszych realizacji.
+          </p>
+          <p>
+              Zapraszamy również do odwiedzenia naszego warsztatu, gdzie mogą Państwo na własne oczy zobaczyć naszą wystawę schodów i balustrad.
+          </p>
+          
+
           </div>
         </div>
-      </div>
-      
+    </div>
 </section>
- 
 
-  <!-- Footer -->
+<!-- Footer -->
 {% endblock %}

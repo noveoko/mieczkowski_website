@@ -4,13 +4,10 @@
 <div class="container mt-5">
     <h1 class="text-center">Galeria</h1>
     
-    <div>
+    <div class="card-container">
         {% for category, subcategories in categories.items() %}
-        <div class="card" style="width: 18rem;">
+        <div class="card">
             {% if category_images[category] %}
-            <!-- <a href="{{ url_for('category', category=category) }}">
-                <img src="{{ url_for('static', filename=category_images[category]) }}" class="card-img-top square-thumbnail" alt="{{ category }}">
-            </a> -->
             {% endif %}
             <div class="card-body">
                 <h5 class="card-title">
@@ -19,7 +16,7 @@
                 <div class="row">
                     {% for subcategory in subcategories %}
                     <div class="col-md-6">
-                        <a href="{{ url_for('category', category=subcategory) }}">
+                        <a href="{{ url_for('category', category=subcategory) }}" class="portfolio-link">
                             <img src="{{ url_for('static', filename=subcategory_images[subcategory]) }}" class="img-thumbnail square-thumbnail" alt="{{ subcategory }}">
                             {{ subcategory }}
                         </a>
