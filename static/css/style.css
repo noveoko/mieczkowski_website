@@ -6,6 +6,11 @@ body {
     color: #333333; /* dark gray color for text */
 }
 
+body, html {
+    height: 100%; /* Make sure the body takes up the full height */
+    overflow: hidden; /* Prevent scrolling on the body */
+}
+
 header {
     background-color: #fff; /* change to pure white for a clean look */
     padding: 20px;
@@ -14,9 +19,10 @@ header {
 }
 
 .container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
+    height: 100%; /* Make sure the container takes up the full height */
+    display: flex; /* Set up a flexbox layout */
+    flex-direction: column; /* Stack children vertically */
+    overflow: auto; /* Allow scrolling within the container if necessary */
 }
 
 .intro {
@@ -266,4 +272,14 @@ font[color="8B4F00"] {
 
 .product-img.active {
     opacity: 1;
+}
+.portfolio {
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  
+  .sidegallery {
+    max-height: 100vh; /* set max height to viewport height */
+    overflow-y: auto;  /* allow vertical scroll if content overflows */
 }

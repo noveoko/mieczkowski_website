@@ -8,10 +8,12 @@ from werkzeug.security import check_password_hash, generate_password_hash
 from wtforms import StringField, SelectField, RadioField, TextAreaField, SubmitField
 from wtforms.validators import DataRequired, Email
 from config import Config
-from forms.samonosne_form import SamonosneStairsForm
 from forms.beton_form import BetonStairsForm
 from utils.products import products as image_links
 from collections import defaultdict
+from flask import render_template, redirect, url_for
+from forms.samonosne_form import SamonosneStairsForm
+
 
 app = Flask(__name__)
 
@@ -113,16 +115,6 @@ def home():
     return render_template('index.html', site_title=site_title)
 
 
-import random
-import os
-
-import random
-
-import random
-
-import random
-
-import random
 
 @app.route('/galeria')
 def galeria():
@@ -210,15 +202,23 @@ def inne():
     return render_template('inne.html')
 
 
+
 @app.route('/cennik_samonosne', methods=['GET', 'POST'])
 def cennik_samonosne():
     form = SamonosneStairsForm()
     if form.validate_on_submit():
         email = form.email.data
-        wood_species = form.wood_species.data
-        rodzaj_schodow = form.rodzaj_schodow.data
-        return render_template('success.html')
-    return render_template('form.html', form=form)
+        wood_type = form.wood_type.data
+        stairs_type = form.stairs_type.data
+        stairs_with = form.stairs_with.data
+        balustrade_type = form.balustrade_type.data
+        additional_information = form.additional_information.data
+        
+        # process your form data here as needed
+
+        return redirect(url_for('success'))  # assuming success is another route in your Flask application
+    return render_template('cennik_samonosne.html', form=form)
+
 
 
 @app.route('/cennik_beton', methods=['GET', 'POST'])

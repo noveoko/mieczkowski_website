@@ -1,0 +1,13 @@
+{% include "base.html" %}
+
+<div class="container mt-5">
+    <div class="jumbotron">
+        <h1 class="display-4">Thank You!</h1>
+        <p class="lead">Your form has been successfully submitted.</p>
+        <hr class="my-4">
+        <p>We will get back to you as soon as possible.</p>
+        <a class="btn btn-primary btn-lg" href="{{ url_for('index') }}" role="button">Return Home</a>
+    </div>
+</div>
+
+{% include "footer.html" %}
