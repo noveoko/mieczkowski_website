@@ -2,315 +2,129 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #fdfdfd; /* lighter color for a clean look */
-    color: #333333; /* dark gray color for text */
+    background-color: #f8f9fa;
+    color: #343a40;
 }
 
-body, html {
-    height: 100%; /* Make sure the body takes up the full height */
-    overflow: hidden; /* Prevent scrolling on the body */
-}
-
-header {
-    background-color: #fff; /* change to pure white for a clean look */
+header, .intro, .gallery, .showroom, nav, footer {
+    background-color: #fff;
     padding: 20px;
-    text-align: center;
-    border-bottom: 1px solid #ddd; /* subtle border to divide the header from the rest of the content */
-}
-
-.container {
-    height: 100%; /* Make sure the container takes up the full height */
-    display: flex; /* Set up a flexbox layout */
-    flex-direction: column; /* Stack children vertically */
-    overflow: auto; /* Allow scrolling within the container if necessary */
-}
-
-.intro {
-    background-color: #fff; /* change to pure white for a clean look */
-    padding: 20px;
-    text-align: center;
-}
-
-.intro h2 {
-    margin: 10px;
-}
-
-.content {
-    padding: 20px;
-    text-align: justify;
-}
-
-.gallery {
-    background-color: #fff; /* change to pure white for a clean look */
-    padding: 20px;
-    text-align: center;
-}
-
-.showroom {
-    padding: 20px;
-    text-align: center;
-}
-
-.showroom p {
-    margin-bottom: 20px;
+    border-bottom: 1px solid #e9ecef;
 }
 
 footer {
-    background-color: #fff; /* change to pure white for a clean look */
-    padding: 20px;
-    text-align: center;
-    border-top: 1px solid #ddd; /* subtle border to divide the footer from the rest of the content */
+    width: 100%;
+    position: relative;
+    bottom: 0;
 }
 
-/* Navbar */
-nav {
+footer .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 60px; /* optional, depending on the desired height of your footer */
+}
+
+footer p {
+    margin-bottom: 0; /* optional, to remove the default bottom margin */
+}
+
+.navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
-    background-color: #fff; /* change to pure white for a clean look */
+    background-color: #fff;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     position: sticky;
     top: 0;
-    z-index: 1000; /* Ensures the nav stays on top of other content when scrolling */
+    z-index: 1000;
 }
-
-
-
-
-nav img {
-    width: 260px;
-    height: 118px;
-}
-
-nav ul {
-    list-style-type: none;
-    display: flex;
-    gap: 20px;
-}
-
-nav ul li {
-    padding: 5px;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: #333; /* dark gray for a professional look */
-    font-weight: bold;
-    transition: all 0.3s ease;
-}
-
-nav ul li a:hover {
-    color: #5a5a5a; /* subtle color change on hover for a professional look */
-}
-
-.nav .active {
-    /* Your custom styles here, e.g.: */
-    color: #333; /* maintain the professional dark gray color */
-    background-color:#ddd; /* subtle gray background for a clean look */
-}
-
-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px;
-    background-color: #fff; /* change to pure white for a clean look */
-}
-
-.logo {
-    font-weight: bold;
-    font-size: 20px;
-}
-
-nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-}
-
-nav li {
-    margin-right: 10px;
-}
-
-footer {
-    padding: 10px;
-    background-color: #fff; /* change to pure white for a clean look */
-    text-align: center;
-}
-
-
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
 
 .logo {
     font-family: 'Roboto', sans-serif;
     font-size: 32px;
     font-weight: 700;
+    color: #007bff;  /* Adjust logo color to Bootstrap primary */
 }
 
-/* For class */
-.form-container {
-    margin: 0 auto;
-    max-width: 800px;  /* Or any width you prefer */
-    padding: 20px;    /* This adds some space around your form */
+.nav-item {
+    padding: 5px;
 }
 
-/* For id */
-#form-container {
-    margin: 0 auto;
-    max-width: 800px;  /* Or any width you prefer */
-    padding: 20px;    /* This adds some space around your form */
-}
-
-.form-control {
-    border: 1px solid #ced4da;
-    box-shadow: none;
-}
-
-.form-control:focus {
-    border: 1px solid #4285f4;
-    box-shadow: 0 0 0 0.2rem rgba(66, 133, 244, 0.25);
-}
-
-.btn-primary {
-    background-color: #4285f4;
-    border-color: #4285f4;
-}
-
-
-.main-content {
-    margin: 20px;
-}
-
-/* Form Styles */
-form {
-  margin-top: 30px;
-  margin-bottom: 50px;
-}
-
-form hr {
-  border: none;
-  border-top: 1px dashed #ccc;
-  margin: 20px 0;
-}
-
-form p {
-  margin-bottom: 10px;
-}
-
-form input[type="radio"],
-form input[type="checkbox"] {
-  margin-right: 5px;
-}
-
-form textarea {
-  width: 100%;
-  padding: 5px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-form select,
-form input[type="text"],
-form input[type="email"] {
-  width: 100%;
-  padding: 5px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-form input[type="submit"] {
-  padding: 10px 20px;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-/* Form Images */
-form img {
-  margin-right: 10px;
-}
-
-/* Additional Styles */
-b {
-  font-weight: bold;
-}
-
-font[face="Arial"] {
-  font-family: Arial, sans-serif;
-}
-
-font[color="8B4F00"] {
-  color: #8B4F00;
-}
-
-.curved-corners {
-    border-radius: 10px;
-}
-
-.no-wrap-short-words {
-   /* white-space: pre-wrap;*/
-    line-break: strict;
-  }
-
-  .logo_in_text {
+.nav-link {
+    text-decoration: none;
+    color: #343a40;
     font-weight: bold;
-    color: black;
-  }
-  
-  .square-thumbnail {
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
-}
-.product-img {
-    opacity: 0.5;
+    transition: all 0.3s ease;
 }
 
-.product-img.active {
-    opacity: 1;
-}
-.portfolio {
-    height: 100vh;
-    overflow: hidden;
-  }
-
-  
-  .sidegallery {
-    max-height: 100vh; /* set max height to viewport height */
-    overflow-y: auto;  /* allow vertical scroll if content overflows */
-}
-.card-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+.nav-link:hover {
+    color: #007bff; /* Adjust nav link hover color to Bootstrap primary */
 }
 
-.feature_image {
-    height: 100%;
-    max-width: 100%;
-    object-fit: contain;
+.form-container, #form-container {
+    margin: 0 auto;
+    max-width: 800px;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1140px;
+    padding: 0 15px;
+    margin: 0 auto;
 }
 
 .card {
+    border: none;
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+}
+
+.card .card-img-top {
     width: 100%;
-    max-width: 18rem;
-    margin: auto;
+    border-top-left-radius: calc(.25rem - 1px);
+    border-top-right-radius: calc(.25rem - 1px);
+}
+
+.card .card-body {
+    padding: 20px;
+    text-align: center;
+}
+
+.card-title {
+    margin-bottom: 20px;
+    color: #343a40;
+}
+
+.card-text {
+    color: #6c757d;
+}
+
+.row {
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.col {
+    padding-right: 15px;
+    padding-left: 15px;
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+}
+
+.square-thumbnail {
+    object-fit: cover;
+    border-radius: .25rem;
 }
 
 .portfolio-link {
-    color: black; /* Adjust color here */
-    text-decoration: none; /* Removes underline */
+    color: #343a40;
+    text-decoration: none;
     transition: color 0.3s ease;
 }
 
 .portfolio-link:hover {
-    color: #777; /* Dark gray hover color */
-}
-
-.square-thumbnail {
-    max-width: 100%;
+    color: #007bff; /* Adjust portfolio link hover color to Bootstrap primary */
 }

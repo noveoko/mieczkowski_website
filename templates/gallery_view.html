@@ -3,16 +3,19 @@
 {% block title %}Portfolio{% endblock %}
 
 {% block content %}
-    <div class="container">
-        <div class="row">
+    <div class="container my-4">
+        <div class="row row-cols-1 row-cols-md-3 g-4">
             {% for product in images %}
-                <div class="col-md-4">
-                    <figure class="gallery-figure">
+                <div class="col">
+                    <div class="card h-100">
                         <a href="{{ url_for('product', category=request.path.split('/')[-1], product=product['description']) }}">
-                            <img src="{{ url_for('static', filename=product['images'][0]) }}" class="gallery-image square-thumbnail" alt="{{ product['description'] }}">
-                            <figcaption class="gallery-caption">{{ product['description'] }}</figcaption>
+                            <img src="{{ url_for('static', filename=product['images'][0]) }}" class="card-img-top square-thumbnail" alt="{{ product['description'] }}">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ product['description'] }}</h5>
+                                <p class="card-text">{{ product['description'] }}</p>
+                            </div>
                         </a>
-                    </figure>
+                    </div>
                 </div>
             {% endfor %}
         </div>
