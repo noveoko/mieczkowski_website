@@ -1,130 +1,37 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f8f9fa;
-    color: #343a40;
+    font-family: 'Poppins', sans-serif; /* Choose a modern font */
+    line-height: 1.6;
+    color: #333;
+    background-color: #f5f5f5; /* Light grey background for a sleek look */
 }
 
-header, .intro, .gallery, .showroom, nav, footer {
-    background-color: #fff;
-    padding: 20px;
-    border-bottom: 1px solid #e9ecef;
-}
-
-footer {
-    width: 100%;
-    position: relative;
-    bottom: 0;
-}
-
-footer .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    min-height: 60px; /* optional, depending on the desired height of your footer */
-}
-
-footer p {
-    margin-bottom: 0; /* optional, to remove the default bottom margin */
-}
-
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #fff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-
-.logo {
-    font-family: 'Roboto', sans-serif;
-    font-size: 32px;
-    font-weight: 700;
-    color: #007bff;  /* Adjust logo color to Bootstrap primary */
-}
-
-.nav-item {
-    padding: 5px;
-}
-
-.nav-link {
-    text-decoration: none;
-    color: #343a40;
-    font-weight: bold;
-    transition: all 0.3s ease;
-}
-
-.nav-link:hover {
-    color: #007bff; /* Adjust nav link hover color to Bootstrap primary */
-}
-
-.form-container, #form-container {
-    margin: 0 auto;
-    max-width: 800px;
-    padding: 20px;
+h1, h2, h3, h4, h5 {
+    font-weight: 600; /* Semi-bold headings */
 }
 
 .container {
     max-width: 1140px;
-    padding: 0 15px;
-    margin: 0 auto;
+    margin: auto;
+    padding: 2rem;
 }
 
 .card {
-    border: none;
-    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
-    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+    border: none; /* Remove borders from cards */
+    box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2); /* Add a subtle shadow */
 }
 
-.card .card-img-top {
-    width: 100%;
-    border-top-left-radius: calc(.25rem - 1px);
-    border-top-right-radius: calc(.25rem - 1px);
+.navbar {
+    padding: 1rem 2rem; /* Increase padding in navbar */
+    box-shadow: 0 2px 4px 0 hsla(0, 0%, 0%, 0.1); /* Add a subtle shadow */
 }
 
-.card .card-body {
-    padding: 20px;
-    text-align: center;
+.form-control {
+    border-radius: 0; /* Rectangular input fields */
 }
 
-.card-title {
-    margin-bottom: 20px;
-    color: #343a40;
+.btn {
+    border-radius: 0; /* Rectangular buttons */
 }
-
-.card-text {
-    color: #6c757d;
-}
-
-.row {
-    margin-right: -15px;
-    margin-left: -15px;
-}
-
-.col {
-    padding-right: 15px;
-    padding-left: 15px;
-    position: relative;
-    width: 100%;
-    min-height: 1px;
-}
-
-.square-thumbnail {
-    object-fit: cover;
-    border-radius: .25rem;
-}
-
-.portfolio-link {
-    color: #343a40;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.portfolio-link:hover {
-    color: #007bff; /* Adjust portfolio link hover color to Bootstrap primary */
+footer {
+    text-align: center; 
 }
