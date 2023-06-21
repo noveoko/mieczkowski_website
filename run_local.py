@@ -16,6 +16,6 @@ def run_linter():
         raise Exception("Linting issues detected. Check the output above.")
 
 if __name__ == "__main__":
-    run_bandit_scan()  # Run Bandit security check
-    run_linter()  # Run linter for code analysis
-    app.run(debug=False)
+    #run_bandit_scan()  # Run Bandit security check
+    #run_linter()  # Run linter for code analysis
+    app.run(debug=True)

@@ -293,7 +293,7 @@ def product(category, product):
     # Find the correct product based on the provided category and product description.
     for product_dict in image_links[category]:
         if product_dict['description'] == product:
-            return render_template('product_view.html', images=product_dict['images'], description=product)
+            return render_template('product_view.html', product=product_dict)  # passing entire dictionary
     
     # If the product wasn't found, return a 404 error.
     return "Product not found", 404

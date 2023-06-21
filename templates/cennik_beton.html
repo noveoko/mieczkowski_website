@@ -1,63 +1,106 @@
 {% extends "base.html" %}
 
-{% block title %}Schody Betonowe{% endblock %}
-
-
-
 {% block content %}
-<div class="container">
+<div class="container mt-4">
+    <h2 class="text-center">Schody Betonowe</h2>
     <form method="POST">
         {{ form.hidden_tag() }}
         <div class="form-group">
-            {{ form.email.label }}<br>
-            {{ form.email(size=30) }}
+            {{ form.email.label(class="form-label") }}
+            {{ form.email(class="form-control") }}
         </div>
+
         <div class="form-group">
-            {{ form.wood_species.label }}<br>
-            {{ form.wood_species() }}
+            {{ form.wood_type.label(class="form-label") }}
+            {{ form.wood_type() }}
         </div>
+
         <div class="form-group">
-            {{ form.num_steps.label }}<br>
-            {{ form.num_steps(size=30) }}
+            {{ form.step_count.label(class="form-label") }}
+            {{ form.step_count(class="form-control") }}
         </div>
+
         <div class="form-group">
-            {{ form.stair_layout.label }}<br>
-            {{ form.stair_layout() }}
+            {{ form.stairs_type.label(class="form-label") }}
+            {% for subfield in form.stairs_type %}
+      
+                <div class="form-check">
+                    <img src="{{ url_for('static', filename='images/template/' ~ image_paths[subfield.label.text]) }}">
+                    {{ subfield(class="form-check-input") }}
+                    {{ subfield.label(class="form-check-label") }}
+                    
+                </div>
+            {% endfor %}
         </div>
+
         <div class="form-group">
-            {{ form.stairs_width_cm.label }}<br>
-            {{ form.stairs_width_cm(size=30) }}
+            {{ form.stairs_width.label(class="form-label") }}
+            {{ form.stairs_width(class="form-control") }}
+            <img src="{{ url_for('static', filename='images/template/' ~ image_paths['stairs_width_cm']) }}">
         </div>
+
         <div class="form-group">
-            {{ form.stairs_type.label }}<br>
-            {{ form.stairs_type() }}
+            {{ form.step_type.label(class="form-label") }}
+            {% for subfield in form.step_type %}
+                <div class="form-check">
+                    {{ subfield(class="form-check-input") }}
+                    {{ subfield.label(class="form-check-label") }}
+                </div>
+            {% endfor %}
         </div>
+
         <div class="form-group">
-            {{ form.step_trim.label }}<br>
-            {{ form.step_trim() }}
+            {{ form.step_finish.label(class="form-label") }}
+            {% for subfield in form.step_finish %}
+                <div class="form-check">
+                    {{ subfield(class="form-check-input") }}
+                    {{ subfield.label(class="form-check-label") }}
+                </div>
+            {% endfor %}
         </div>
+
         <div class="form-group">
-            {{ form.balustrade_type.label }}<br>
-            {{ form.balustrade_type() }}
+            {{ form.balustrade_type.label(class="form-label") }}
+            {% for subfield in form.balustrade_type %}
+                <div class="form-check">
+                    {{ subfield(class="form-check-input") }}
+                    {{ subfield.label(class="form-check-label") }}
+                </div>
+            {% endfor %}
         </div>
+
         <div class="form-group">
-            {{ form.balustrade_info.label }}<br>
-            {{ form.balustrade_info(cols=30, rows=4) }}
+            {{ form.balustrade_info.label(class="form-label") }}
+            {{ form.balustrade_info(class="form-control") }}
         </div>
+
         <div class="form-group">
-            {{ form.led_lighting.label }}<br>
-            {{ form.led_lighting() }}
+            {{ form.led_lighting.label(class="form-label") }}
+            {% for subfield in form.led_lighting %}
+                <div class="form-check">
+                    {{ subfield(class="form-check-input") }}
+                    {{ subfield.label(class="form-check-label") }}
+                </div>
+            {% endfor %}
         </div>
+
         <div class="form-group">
-            {{ form.will_be_colored.label }}<br>
-            {{ form.will_be_colored() }}
+            {{ form.color_change.label(class="form-label") }}
+            {% for subfield in form.color_change %}
+                <div class="form-check">
+                    {{ subfield(class="form-check-input") }}
+                    {{ subfield.label(class="form-check-label") }}
+                </div>
+            {% endfor %}
         </div>
+
         <div class="form-group">
-            {{ form.additional_information.label }}<br>
-            {{ form.additional_information(cols=30, rows=4) }}
+            {{ form.additional_info.label(class="form-label") }}
+            {{ form.additional_info(class="form-control") }}
         </div>
+
         <div class="form-group">
-            {{ form.submit() }}
+            {{ form.submit(class="btn btn-primary") }}
         </div>
     </form>
 </div>

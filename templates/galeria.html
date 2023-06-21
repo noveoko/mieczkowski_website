@@ -1,31 +1,37 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="container mt-5">
-    <h1 class="text-center">Galeria</h1>
+<div class="gallery_container">
+    <div class="row">
+        <div class="col">
+            <div class="container mt-5">
+                <h1 class="text-center">Galeria</h1>
     
-    <div class="card-container">
-        {% for category, subcategories in categories.items() %}
-        <div class="card">
-            {% if category_images[category] %}
-            {% endif %}
-            <div class="card-body">
-                <h5 class="card-title">
-                   {{ category.capitalize() }}
-                </h5>
-                <div class="row">
-                    {% for subcategory in subcategories %}
-                    <div class="col-md-6">
-                        <a href="{{ url_for('category', category=subcategory) }}" class="portfolio-link">
-                            <img src="{{ url_for('static', filename=subcategory_images[subcategory]) }}" class="img-thumbnail square-thumbnail" alt="{{ subcategory }}">
-                            {{ subcategory }}
-                        </a>
+                <div class="card-container">
+                    {% for category, subcategories in categories.items() %}
+                    <div class="card">
+                        {% if category_images[category] %}
+                        {% endif %}
+                        <div class="card-body">
+                            <h5 class="card-title">
+                               {{ category.capitalize() }}
+                            </h5>
+                            <div class="row">
+                                {% for subcategory in subcategories %}
+                                <div class="col-md-6">
+                                    <a href="{{ url_for('category', category=subcategory) }}" class="portfolio-link">
+                                        <img src="{{ url_for('static', filename=subcategory_images[subcategory]) }}" class="img-thumbnail square-thumbnail" alt="{{ subcategory }}">
+                                        {{ subcategory }}
+                                    </a>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
                     </div>
                     {% endfor %}
                 </div>
             </div>
         </div>
-        {% endfor %}
     </div>
 </div>
 {% endblock %}

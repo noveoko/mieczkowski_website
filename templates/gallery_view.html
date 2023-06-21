@@ -4,17 +4,15 @@
 
 {% block content %}
     <div class="container my-4">
-        <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="card-columns">
             {% for product in images %}
-                <div class="col">
-                    <div class="card h-100">
-                        <a href="{{ url_for('product', category=request.path.split('/')[-1], product=product['description']) }}" class="card-link">
-                            <img src="{{ url_for('static', filename=product['images'][0]) }}" class="card-img-top square-thumbnail" alt="{{ product['description'] }}">
-                            <div class="card-body">
-                                <h5 class="card-title">{{ product['description'] }}</h5>
-                            </div>
-                        </a>
-                    </div>
+                <div class="card h-100 border-0 transform-on-hover">
+                    <a href="{{ url_for('product', category=request.path.split('/')[-1], product=product['description']) }}" class="card-link text-dark">
+                        <img src="{{ url_for('static', filename=product['images'][0]) }}" class="card-img-top square-thumbnail" alt="{{ product['description'] }}">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ product['description'] }}</h5>
+                        </div>
+                    </a>
                 </div>
             {% endfor %}
         </div>

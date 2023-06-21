@@ -2,10 +2,10 @@
 <html>
 <head>
     <meta charset="iso-8859-2">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SCHODY MIECZKOWSKI, Producent Schodów Drewnianych i metalowych, schody, schody drewniane, schody na beton, schody samonośne, schody z drewna, schody Warszawa</title>
     <meta name="description" content="Firma Schody Mieczkowski ...">
     <!-- You can add more meta tags here -->
-
 
     <!-- Replace CSS file path with Flask's static path if needed -->
     <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
@@ -15,8 +15,14 @@
 </head>
 <body>
     {% include "nav.html" %}
-    {% block content %}
-    {% endblock %}
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                {% block content %}
+                {% endblock %}
+            </div>
+        </div>
+    </div>
   
     {% include "footer.html" %}
 
