@@ -104,3 +104,21 @@ footer {
     margin: 0 auto;
     margin-bottom: 20px;
 }
+
+.invisible_link {
+    text-decoration: none;
+    color: black; /* adjust this to your text color */
+    cursor: default;
+}
+
+.invisible_link:active,
+.invisible_link:focus {
+    text-decoration: underline;
+    color: blue; /* adjust this to the color you want after the link is clicked */
+    cursor: pointer;
+}
+
+.invisible_link:visited {
+    color: black; /* adjust this to your text color */
+    text-decoration: none;
+}
