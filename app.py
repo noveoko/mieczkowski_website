@@ -14,8 +14,12 @@ from flask import render_template, redirect, url_for
 from forms.samonosne_form import SamonosneStairsForm
 from forms.beton_form import SchodyBetonowe
 import random
+from flask_cors import CORS
+from flask_wtf import CSRFProtect
 
 app = Flask(__name__)
+CORS(app)
+csrf = CSRFProtect(app)
 
 def filter_valid_images(products):
     for category in products:

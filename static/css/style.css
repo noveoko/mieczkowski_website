@@ -122,3 +122,7 @@ footer {
     color: black; /* adjust this to your text color */
     text-decoration: none;
 }
+
+.portfolio_container{
+    background-color: black;
+}
