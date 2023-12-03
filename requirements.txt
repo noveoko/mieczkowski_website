@@ -1,9 +1,0 @@
-flask
-requests
-flask-wtf
-email-validator
-flask-login
-flask-sqlalchemy
-bandit
-click
-flask-cors
